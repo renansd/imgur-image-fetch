@@ -1,6 +1,5 @@
 package com.example.imgurimagefetch.mainscreen
 
-import android.util.Log
 import com.example.network.NetworkInteractor
 import com.example.network.imagefetch.ImageFetchContract
 import com.example.network.imagefetch.model.ImageFetchResponse
@@ -10,19 +9,23 @@ import org.koin.core.component.inject
 
 class MainScreenViewModel(private var view: MainScreenContract.View?) : NetworkInteractor<ImageFetchResponse>(), MainScreenContract.ViewModel, KoinComponent {
     private val imageFetchContract: ImageFetchContract by inject()
+    private val page: Int = 0
 
-    override fun getCatImages() {
+    override fun getCatImages(page: Int) {
         makeRequest()
+        view?.showLoading()
     }
 
     override fun getRequestObservable(): Observable<ImageFetchResponse> =
-        imageFetchContract.getCatImages()
+        imageFetchContract.getCatImages(page)
 
     override fun onResult(result: ImageFetchResponse) {
-        Log.d("Test", "Images fetching successful")
+        view?.onSuccess(result)
+        view?.hideLoading()
     }
 
     override fun onError(throwable: Throwable) {
-        Log.d("Test", "Images fetching unsuccessful")
+        view?.onError(throwable)
+        view?.hideLoading()
     }
 }

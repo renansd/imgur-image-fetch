@@ -10,6 +10,6 @@ class ImageFetchContract : BaseContract(), KoinComponent {
 
     private val imageFetchRepository: ImageFetchRepository by inject()
 
-    fun getCatImages(): Observable<ImageFetchResponse> =
-        imageFetchRepository.getCatImages().applySchedulers().share()
+    fun getCatImages(page: Int): Observable<ImageFetchResponse> =
+        imageFetchRepository.getCatImages(page).applySchedulers().share()
 }

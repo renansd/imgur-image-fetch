@@ -1,9 +1,7 @@
 package com.example.network
 
 import okhttp3.Authenticator
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -34,7 +32,7 @@ object RetrofitInitialization {
 
     private fun buildAuthenticator(): Authenticator {
         return Authenticator { _, response ->
-            response.request().newBuilder().header("Authorization", "Client-ID 1ceddedc03a5d71").build()
+            response.request().newBuilder().header("Authorization", "Client-ID 102583a1260cd5d").build()
         }
     }
 

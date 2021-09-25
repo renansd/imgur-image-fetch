@@ -50,4 +50,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.converterVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapterVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptorVersion"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
 }

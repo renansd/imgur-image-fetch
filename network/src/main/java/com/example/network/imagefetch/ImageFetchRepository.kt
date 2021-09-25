@@ -8,6 +8,6 @@ class ImageFetchRepository(retrofit: Retrofit) {
 
     private var imageFetchService: ImageFetchService = retrofit.create(ImageFetchService::class.java)
 
-    fun getCatImages(): Observable<ImageFetchResponse> =
-        imageFetchService.getCatImages()
+    fun getCatImages(page: Int): Observable<ImageFetchResponse> =
+        imageFetchService.getCatImages(page)
 }

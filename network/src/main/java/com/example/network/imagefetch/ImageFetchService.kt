@@ -7,6 +7,6 @@ import retrofit2.http.Query
 
 interface ImageFetchService {
 
-    @GET("gallery/search/?p=cats")
-    fun getCatImages(): Observable<ImageFetchResponse>
+    @GET("gallery/search/?q=cats")
+    fun getCatImages(@Query("page") page: Int): Observable<ImageFetchResponse>
 }

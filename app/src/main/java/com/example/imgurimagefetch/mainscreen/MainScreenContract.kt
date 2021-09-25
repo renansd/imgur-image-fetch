@@ -1,17 +1,19 @@
 package com.example.imgurimagefetch.mainscreen
 
+import com.example.network.imagefetch.model.ImageFetchResponse
+
 interface MainScreenContract {
     interface View {
         fun showLoading()
 
         fun hideLoading()
 
-        fun onSuccess()
+        fun onSuccess(result: ImageFetchResponse)
 
-        fun onError()
+        fun onError(throwable: Throwable)
     }
 
     interface ViewModel {
-        fun getCatImages()
+        fun getCatImages(page: Int)
     }
 }

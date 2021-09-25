@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Imgur Image Fetch</string>
+    <string name="network_error">There was an issue retrieving images from Imgur</string>
 </resources>
