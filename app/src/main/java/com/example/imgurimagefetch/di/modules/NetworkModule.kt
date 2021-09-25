@@ -1,4 +1,4 @@
-package com.example.imgurimagefetch.di
+package com.example.imgurimagefetch.di.modules
 
 import com.example.network.RetrofitInitialization
 import com.example.network.imagefetch.ImageFetchContract

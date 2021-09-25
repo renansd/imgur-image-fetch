@@ -8,7 +8,7 @@ import io.reactivex.Observable
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class MainScreenViewModel : NetworkInteractor<ImageFetchResponse>(), MainScreenContract.ViewModel, KoinComponent {
+class MainScreenViewModel(private var view: MainScreenContract.View?) : NetworkInteractor<ImageFetchResponse>(), MainScreenContract.ViewModel, KoinComponent {
     private val imageFetchContract: ImageFetchContract by inject()
 
     override fun getCatImages() {
