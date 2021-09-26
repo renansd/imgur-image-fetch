@@ -90,8 +90,7 @@ class MainScreenActivity : AppCompatActivity(), MainScreenContract.View, Recycle
 
         Glide.with(this)
             .load(imagePath)
-            .apply(options.skipMemoryCache(true))
-            .apply(options.diskCacheStrategy(DiskCacheStrategy.NONE))
+            .apply(options.diskCacheStrategy(DiskCacheStrategy.ALL))
             .apply(options.frame(3000))
             .apply(options.override(1000, 1000))
             .placeholder(R.drawable.ic_launcher_foreground)
